@@ -1,14 +1,13 @@
 {
-  "name": "vis",
+  "name": "threejs-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch",
-    "build": "webpack --optimize-minimize",
-    "build:watch": "webpack --watch"
+    "build": "webpack --optimize-minimize"
   },
-  "author": "",
+  "author": "Matt Lubel",
   "license": "ISC",
   "dependencies": {
     "three": "^0.87.1"

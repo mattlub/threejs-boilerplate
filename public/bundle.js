@@ -60,53 +60,11 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _three = __webpack_require__(1);
-
-var THREE = _interopRequireWildcard(_three);
-
-var _geometry = __webpack_require__(2);
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
-
-var scene = void 0,
-    camera = void 0,
-    renderer = void 0;
-
-var init = function init() {
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(45, 1, 0.1, 1000);
-  renderer = new THREE.WebGLRenderer();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-
-  var light = new THREE.DirectionalLight(0xffffff);
-  light.position.set(1, 1, 1);
-  scene.add(light);
-
-  var sphere = (0, _geometry.createSphere)({});
-  scene.add(sphere);
-};
-
-var render = function render() {
-  renderer.render(scene, camera);
-};
-
-init();
-render();
-
-/***/ }),
-/* 1 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -44344,6 +44302,48 @@ function CanvasRenderer() {
 
 
 /***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _three = __webpack_require__(0);
+
+var THREE = _interopRequireWildcard(_three);
+
+var _geometry = __webpack_require__(2);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var scene = void 0,
+    camera = void 0,
+    renderer = void 0;
+
+var init = function init() {
+  scene = new THREE.Scene();
+  camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+  renderer = new THREE.WebGLRenderer();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  document.body.appendChild(renderer.domElement);
+
+  var light = new THREE.DirectionalLight(0xffffff);
+  light.position.set(1, 1, 1);
+  scene.add(light);
+
+  var sphere = (0, _geometry.createSphere)({});
+  scene.add(sphere);
+};
+
+var render = function render() {
+  renderer.render(scene, camera);
+};
+
+init();
+render();
+
+/***/ }),
 /* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44355,7 +44355,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.createSphere = undefined;
 
-var _three = __webpack_require__(1);
+var _three = __webpack_require__(0);
 
 var THREE = _interopRequireWildcard(_three);
 
